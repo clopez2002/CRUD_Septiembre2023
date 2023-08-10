@@ -39,6 +39,22 @@ public class daoClient implements DAO{
 
 /*******************************************************************/
 
+    @Override
+    @Transactional
+    public void insertNewRunner(Runner theRunner) {
+
+        // obtener la sesion
+
+        Session mySession = sessionFactory.getCurrentSession();
+
+        // guardamos el runner en la BBDD
+
+        mySession.save(theRunner);
+
+    }
+
+
+
 /*******************************************************************/
 
 /*******************************************************************/

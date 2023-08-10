@@ -63,6 +63,9 @@
     <!-- Habilitar configuración de transacciones basadas en anotaciones -->
 	<tx:annotation-driven transaction-manager="miTransactionManager" />
 
+	<!-- Aca especificamos que debe ir a buscar los recursos en RESOURCES-->
+	<mvc:resources mapping="/resources/**" location="/resources/"></mvc:resources>
+
 </beans>
 
 
