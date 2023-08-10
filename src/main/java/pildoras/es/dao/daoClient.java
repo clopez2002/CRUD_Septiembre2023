@@ -49,13 +49,28 @@ public class daoClient implements DAO{
 
         // guardamos el runner en la BBDD
 
-        mySession.save(theRunner);
+        // mySession.save(theRunner); este es solo para guardasr uno nuevo y vamos a usar el guardar O actualizar
+
+        mySession.saveOrUpdate(theRunner);
 
     }
 
-
-
 /*******************************************************************/
+
+    @Override
+    @Transactional
+    public Runner getOneRunnerById(int id) {
+
+        // obtener la sesion
+
+        Session mySession = sessionFactory.getCurrentSession();
+
+        Runner oneRunner = mySession.get(Runner.class, id);
+
+        return oneRunner;
+    }
+
+
 
 /*******************************************************************/
 

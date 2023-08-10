@@ -17,7 +17,7 @@
 
     <form:form action="processRunnerInsertedURL" modelAttribute="insertedRunnerAttributes" method="post"><!-- esta linea le dice donde mandar la info, le da el attributo y el metodo a usar -->
 
-        <table>
+        <table border="1">
 
             <tr>
                 <td>Nombre</td>                         <!--Texto -->

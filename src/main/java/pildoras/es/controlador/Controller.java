@@ -3,9 +3,7 @@ package pildoras.es.controlador;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pildoras.es.controlador.entity.Runner;
 import pildoras.es.dao.DAO;
 
@@ -69,6 +67,23 @@ public class Controller {
 
 
 /*******************************************************************/
+
+    // @RequestParam("runnerId") el runnerId un nombre que YO elijo... y
+    @GetMapping("/updateRunnerURL")
+    public String updateRunnerMethod (@RequestParam("runnerId") int Id, Model theModel){
+
+        // obtener el cliente cuyo id le paso
+
+        Runner theRunner = daoClient.getOneRunnerById (Id);
+
+        // establecer el cliente como atributo del modelo
+
+        theModel.addAttribute("runnerAttributeToUpdate", theRunner);
+
+        // enviar el cliente al formulario
+
+        return "updateRunnerFile";
+    }
 
 
 /*******************************************************************/

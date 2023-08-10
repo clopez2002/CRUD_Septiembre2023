@@ -27,11 +27,17 @@
             <th>Email</th>
             <th>Dorsal</th>
             <th>Tiempo</th>
+            <th>Update</th>
         </tr>
 
         <!-- ahora un bucle: forEach, para mostrar cada uno de los runners -->
 
         <c:forEach var="runnersTEMP" items="${runnersAttributes}">
+
+            <!--c:url es para relacionar el boton de abajo de update, y llamar a la nueva URL-->
+            <c:url var="linkUpdate" value="/runnersHomeURL/updateRunnerURL">
+                    <c:param name="runnerId" value="${runnersTEMP.id}"/> <!-- con esto le pasamos el ID del runer a midificar-->
+            </c:url>
 
 
             <tr>
@@ -41,7 +47,13 @@
                 <td>${runnersTEMP.email}</td>
                 <td>${runnersTEMP.dorsal}</td>
                 <td>${runnersTEMP.tiempo}</td>
+
+                <!-- Boton de modificar el registro-->
+                <td><a href="${linkUpdate}"><input type="button" value="Update"/></a> </td>
+
             </tr>
+
+
 
 
         </c:forEach>
