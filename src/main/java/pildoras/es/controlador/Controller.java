@@ -89,6 +89,15 @@ public class Controller {
 /*******************************************************************/
 
 
+    @GetMapping("/deleteRunnerURL")
+    public String deleteRunnerByIdMethod (@RequestParam("runnerId") int id){
+
+
+        daoClient.deleteRunnerById(id);
+
+        return "redirect:/runnersHomeURL/runnersListURL";
+    }
+
 /*******************************************************************/
 
 

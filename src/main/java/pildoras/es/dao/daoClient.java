@@ -70,9 +70,24 @@ public class daoClient implements DAO{
         return oneRunner;
     }
 
-
-
 /*******************************************************************/
+
+    @Override
+    @Transactional
+    public void deleteRunnerById(int id) {
+
+
+        // obtener la sesion
+
+        Session mySession = sessionFactory.getCurrentSession();
+
+        Query myQwery = mySession.createQuery("delete from Runner where id =: IDRunner");
+
+        myQwery.setParameter("IDRunner", id);
+
+        myQwery.executeUpdate();
+
+    }
 
 /*******************************************************************/
 

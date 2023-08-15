@@ -28,6 +28,7 @@
             <th>Dorsal</th>
             <th>Tiempo</th>
             <th>Update</th>
+            <th>Delete</th>
         </tr>
 
         <!-- ahora un bucle: forEach, para mostrar cada uno de los runners -->
@@ -40,6 +41,13 @@
             </c:url>
 
 
+            <!-- Ahora Boton para eliminar -->
+            <c:url var="deleteLink" value="/runnersHomeURL/deleteRunnerURL">
+                <c:param name="runnerId" value="${runnersTEMP.id}"/>
+            </c:url>
+
+
+
             <tr>
                 <td>${runnersTEMP.nombre}</td>
                 <td>${runnersTEMP.apellido}</td>
@@ -50,6 +58,11 @@
 
                 <!-- Boton de modificar el registro-->
                 <td><a href="${linkUpdate}"><input type="button" value="Update"/></a> </td>
+
+
+                <!-- Boton para eliminar -->
+                <td><a href="${deleteLink}"><input type="button" value="Delete"
+                                                   onclick="if (!(confirm('Esta seguro de eliminar el usuario?'))) return false"/></a> </td>
 
             </tr>
 

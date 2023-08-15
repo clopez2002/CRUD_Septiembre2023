@@ -11,4 +11,7 @@ public interface DAO {
     void insertNewRunner(Runner theRunner);
 
     Runner getOneRunnerById(int id);
+
+
+    void deleteRunnerById(int id);
 }
