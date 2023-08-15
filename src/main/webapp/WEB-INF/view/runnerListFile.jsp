@@ -77,8 +77,12 @@
     <!-- Boton para insertar runner en la BBDD, el cual nos tiene que redireccionar a otro formulario JSP -->
 
     <br/> <!-- linea en blanco-->
-
     <input type="button" value="Insert new Runner" onclick="window.location.href='insertNewRunnerURL'; return false;"/>
+
+
+    <!-- Boton para buscar Runner por Dorsal, y que nos lleva a otra URL-->
+    <input type="button" value="Serach Runner by Dorsal" onclick="window.location.href='searchRunnerByDorsalURL'; return false;"/>
+
 
 </body>
 </html>
