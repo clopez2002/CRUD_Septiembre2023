@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import pildoras.es.controlador.entity.Runner;
 import pildoras.es.dao.DAO;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @org.springframework.stereotype.Controller      // es nuestro controlador, por eso esta anotacion
@@ -100,8 +101,32 @@ public class Controller {
 
 /*******************************************************************/
 
+    @RequestMapping("/searchRunnerByDorsalURL")
+    public String searchRunnerByDorsalMethod (){
+
+        return "searchRunnerByDorsalFile";
+    }
+
 
 /*******************************************************************/
+
+    @RequestMapping("/getRunnerInformationFromDorsalNumberURL")
+    public String getRunnerInformationMethod (HttpServletRequest request, Model theModel){
+
+        /*
+            em la pagina obtenemos:  <input type="text" name="runnerDorsalToSearch"> este parametro runnerDorsalToSearch
+            es el string que nesesitamos...
+         */
+        int dorsalBuscado = Integer.parseInt(request.getParameter("runnerDorsalToSearch"));
+
+        // buscamos el runner
+        Runner oneRunner = daoClient.getRunnerByDorsal(dorsalBuscado);
+
+        // lo agregamos al modelo
+        theModel.addAttribute("Attributes", oneRunner);
+
+        return "displayRunnerInformation";
+    }
 
 
 /*******************************************************************/

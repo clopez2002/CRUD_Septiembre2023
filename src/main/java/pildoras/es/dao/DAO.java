@@ -14,4 +14,6 @@ public interface DAO {
 
 
     void deleteRunnerById(int id);
+
+    Runner getRunnerByDorsal(int dorsalBuscado);
 }

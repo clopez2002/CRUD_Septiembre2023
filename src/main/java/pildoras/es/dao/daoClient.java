@@ -91,6 +91,26 @@ public class daoClient implements DAO{
 
 /*******************************************************************/
 
+    @Override
+    @Transactional
+    public Runner getRunnerByDorsal(int dorsalBuscado) {
+
+        // obtener la sesion
+
+        Session mySession = sessionFactory.getCurrentSession();
+
+        String dorsal = String.valueOf(dorsalBuscado);
+
+        String query = "SELECT runner from Runner runner WHERE dorsal="+dorsal;
+
+        Runner theRuner = (Runner) mySession.createQuery(query).uniqueResult();
+
+
+        return theRuner;
+    }
+
+
+
 /*******************************************************************/
 
 /*******************************************************************/
