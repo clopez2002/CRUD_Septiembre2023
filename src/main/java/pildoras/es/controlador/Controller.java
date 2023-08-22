@@ -1,5 +1,6 @@
 package pildoras.es.controlador;
 
+import org.hibernate.NonUniqueResultException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
@@ -111,7 +112,9 @@ public class Controller {
 /*******************************************************************/
 
     @RequestMapping("/getRunnerInformationFromDorsalNumberURL")
-    public String getRunnerInformationMethod (HttpServletRequest request, Model theModel){
+    public String getRunnerInformationMethod (HttpServletRequest request, Model theModel) {
+
+        String output = "displayRunnerInformation";
 
         /*
             em la pagina obtenemos:  <input type="text" name="runnerDorsalToSearch"> este parametro runnerDorsalToSearch
@@ -120,12 +123,13 @@ public class Controller {
         int dorsalBuscado = Integer.parseInt(request.getParameter("runnerDorsalToSearch"));
 
         // buscamos el runner
-        Runner oneRunner = daoClient.getRunnerByDorsal(dorsalBuscado);
+        Runner oneRunner = oneRunner = daoClient.getRunnerByDorsal(dorsalBuscado);
+        if (oneRunner == null)
+            return "noRunnerFoundFile";
 
-        // lo agregamos al modelo
         theModel.addAttribute("Attributes", oneRunner);
 
-        return "displayRunnerInformation";
+        return output;
     }
 
 
