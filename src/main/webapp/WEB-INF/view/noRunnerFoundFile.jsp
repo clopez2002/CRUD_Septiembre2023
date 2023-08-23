@@ -8,19 +8,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Runner no encontrado</title>
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/estilos.css"/>
 </head>
 <body>
-        Si el runner no esta, lo informamos por aca y ponemos boton para volver al inicio
 
-        <tr>
+        <header>
 
-            <th> El dorsal ingresado no figura</th>
+            <h1>El Dorsal ingresado no corresponde a ningun corredor registrado</h1>
 
-        </tr>
+        </header>
+
         <br>
 
         <input type="button" value="Return Home" onclick="window.location.href='runnersListURL'; return false;"/>
+
+        <footer> Vuelvas prontos!!</footer>
 </body>
 </html>

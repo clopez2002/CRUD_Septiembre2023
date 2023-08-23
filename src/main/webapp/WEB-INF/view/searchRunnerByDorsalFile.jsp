@@ -9,11 +9,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Search Runner by Dorsal</title>
     <!-- Aca le decimos donde estan los estilos-->
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/estilos.css"/>
 </head>
 <body>
+
+    <header>
+
+        <h1>Inser dorsal to search</h1>
+
+    </header>
 
 
     <form action="getRunnerInformationFromDorsalNumberURL" method="get">

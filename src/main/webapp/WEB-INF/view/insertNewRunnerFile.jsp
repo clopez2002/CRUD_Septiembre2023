@@ -9,12 +9,17 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Insert Runners information</title>
     <!-- Aca le decimos donde estan los estilos-->
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/estilos.css"/>
 </head>
 <body>
 
+    <header>
+
+        <h1>Insert new Runner</h1>
+
+    </header>
     <form:form action="processRunnerInsertedURL" modelAttribute="insertedRunnerAttributes" method="post"><!-- esta linea le dice donde mandar la info, le da el attributo y el metodo a usar -->
 
         <table border="1">

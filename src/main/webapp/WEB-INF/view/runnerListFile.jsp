@@ -9,13 +9,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Runners List</title>
 
     <!-- Aca le decimos donde estan los estilos-->
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/estilos.css"/>
 
 </head>
 <body>
+
+    <header>    <!-- Header, le agregamos "titulo" a la pagina y se muestra en negro con <h1></h1> -->
+
+        <!-- le etiqueta es la h... puede ir de 1...6, y si pongo h4 va aestar un poco mas chica-->
+        <h1>Runner List</h1>
+
+    </header>
 
 
     <table border="1">

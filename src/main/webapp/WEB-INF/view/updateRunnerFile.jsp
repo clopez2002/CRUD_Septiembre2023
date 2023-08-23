@@ -10,13 +10,19 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Update runner</title>
 
     <!-- Aca le decimos donde estan los estilos-->
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/estilos.css"/>
 
 </head>
 <body>
+
+        <header>
+
+            <h1>Update Runner</h1>
+
+        </header>
 
         <form:form action="processRunnerInsertedURL" modelAttribute="runnerAttributeToUpdate" method="post"><!-- esta linea le dice donde mandar la info, le da el attributo y el metodo a usar -->
             <form:hidden path="id"/>

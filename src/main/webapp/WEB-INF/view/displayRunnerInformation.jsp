@@ -9,10 +9,15 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Runners Information</title>
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/estilos.css"/>
 </head>
 <body>
+        <header>
+
+            <h1>Runner Information</h1>
+
+        </header>
 
         <form:form action="getRunnerInformationFromDorsalNumberURL" modelAttribute="Attributes" method="post"><!-- esta linea le dice donde mandar la info, le da el attributo y el metodo a usar -->
 
